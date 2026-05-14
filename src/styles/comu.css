@@ -1,0 +1,9 @@
+.comu-theme {
+  --bg: #dab690;
+  --text-dark: #3a2e2a;
+  --text-light: #fff7f0;
+  --accent: #ffcf83;
+
+  background-color: var(--bg);
+  color: var(--text-dark);
+}
