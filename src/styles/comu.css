@@ -8,6 +8,12 @@
   color: var(--text-dark);
 }
 
+body {
+  font-family: sans-serif;
+}
+
+/* HERO SECTION */
+
 .comu-hero {
   height: 30vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("/imgs/comu-hero.JPG");
@@ -36,6 +42,20 @@
   font-family: sans-serif;
   text-transform: uppercase;
   letter-spacing: 0.03em;
+}
+
+/* INFO SECTIONS */
+.info-section {
+  max-width: 900px;
+  margin: 3rem auto;
+  padding: 1rem 2rem;
+  border: 2px solid var(--text-dark);
+  border-radius: 10rem;
+  text-align: center;
+}
+
+.info-section h2 {
+  text-transform: uppercase;
 }
 
 /* MEDIA QUERIES */
