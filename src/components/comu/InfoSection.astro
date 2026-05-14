@@ -1,0 +1,12 @@
+---
+const { title, text, image, alt } = Astro.props;
+---
+
+<section class="info-section">
+  <div class="info-text">
+    <h2>{title}</h2>
+    <p>{text}</p>
+  </div>
+
+  {image && <img src={image} alt={alt} class="info-image" />}
+</section>

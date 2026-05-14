@@ -7,3 +7,40 @@
   background-color: var(--bg);
   color: var(--text-dark);
 }
+
+.comu-hero {
+  height: 30vh;
+  background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("/imgs/comu-hero.JPG");
+
+  background-size: cover;
+  background-position: center;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+
+  padding: 2rem;
+  text-align: center;
+}
+
+.comu-logo {
+  width: min(60vw, 520px);
+}
+
+.comu-hero p {
+  margin-top: -1rem;
+  color: var(--accent);
+  font-size: clamp(1rem, 2vw, 1.6rem);
+  font-style: italic;
+  font-family: sans-serif;
+  text-transform: uppercase;
+  letter-spacing: 0.03em;
+}
+
+/* MEDIA QUERIES */
+@media (min-width: 450) {
+  .comu-hero {
+    height: 100vh;
+  }
+}
