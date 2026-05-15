@@ -21,11 +21,6 @@ header {
   text-decoration: none;
 }
 
-h1 {
-  letter-spacing: -0.04em;
-  line-height: 0.9;
-}
-
 h1,
 h2,
 h3,
@@ -33,6 +28,19 @@ h4 {
   font-family: var(--font-heading);
   font-weight: 900;
   text-transform: uppercase;
+}
+
+h1 {
+  letter-spacing: -0.04em;
+  line-height: 0.9;
+}
+
+/* h2 
+
+h3 */
+
+h4 {
+  font-size: clamp(1.2rem, 3vw, 1.3rem);
 }
 
 p {

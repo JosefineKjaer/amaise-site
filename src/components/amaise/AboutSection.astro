@@ -1,0 +1,89 @@
+<section class="about">
+  <div class="about-card">
+    <div class="about-info">
+      <h2>About A'MAISE</h2>
+      <p>A’MAISE is more than just a hair salon. It’s a warm and welcoming space focused on curls, texture, and making every client feel seen and understood.</p>
+      <p>Maise is passionate about creating an experience where quality, comfort, and connection go hand in hand — so you can feel at home from the moment you walk through the door.</p>
+    </div>
+    <img src="/imgs/maise.JPG" alt="Photo of Maise, founder of A'MAISE" class="about-img" />
+  </div>
+</section>
+
+<style>
+  .about {
+    padding: 5rem 1rem;
+  }
+
+  .about-card {
+    position: relative;
+
+    background: var(--secondary);
+
+    padding: 2rem 1.5rem 2rem 1.5rem;
+    /* overflow: visible; */
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .about-info {
+    padding-right: 8rem;
+  }
+
+  .about-info h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .about-info p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .about-img {
+    width: 160px;
+
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+
+    position: absolute;
+
+    top: 0.1rem;
+    right: -0.1rem;
+
+    transform: rotate(-3deg);
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  @media (min-width: 900px) {
+    .about {
+      padding: 8rem 2rem;
+    }
+
+    .about-card {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem;
+
+      display: grid;
+      grid-template-columns: 1fr 350px;
+
+      gap: 3rem;
+
+      align-items: center;
+    }
+
+    .about-img {
+      /* position: absolute; */
+
+      width: 320px;
+
+      right: -2rem;
+      top: -3rem;
+    }
+
+    .about-info {
+      padding-right: 4rem;
+    }
+  }
+</style>
