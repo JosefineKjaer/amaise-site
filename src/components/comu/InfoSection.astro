@@ -10,3 +10,30 @@ const { title, text, image, alt } = Astro.props;
 
   <slot />
 </section>
+
+<style>
+  .info-section {
+    width: calc(100% - 2rem);
+    max-width: 900px;
+    margin: 3rem auto;
+    padding: 1rem 2rem 2rem;
+    border: 3px solid var(--text-dark);
+    border-radius: 10rem;
+    text-align: center;
+  }
+
+  .info-section h2 {
+    text-transform: uppercase;
+  }
+
+  .info-section p {
+    max-width: 600px;
+    margin: 0 auto;
+  }
+
+  .info-image {
+    margin: 2rem auto 0;
+    border-radius: 2rem;
+    width: min(100%, 350px);
+  }
+</style>
