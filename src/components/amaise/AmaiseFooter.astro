@@ -1,0 +1,108 @@
+---
+import BookButton from "./BookButton.astro";
+---
+
+<footer class="footer-grid">
+  <div class="ready">
+    <h3>Ready to take care of your hair?</h3>
+    <BookButton />
+  </div>
+
+  <div class="location">
+    <h4>Location</h4>
+    <img src="/imgs/location.png" alt="location symbol" />
+    <p>Nørrebrogade 213 st tv, København 2200</p>
+  </div>
+
+  <div class="contact">
+    <h4>Contact</h4>
+    <img src="/imgs/dm.png" alt="instagram DM symbol" />
+    <a href="https://www.instagram.com/amaise_comu/">@amaise_comu</a>
+    <img src="/imgs/mail.png" alt="mail symbol" />
+    <a href="mailto:amaise.ceo@gmail.com">amaise.ceo@gmail.com</a>
+  </div>
+
+  <div class="some">
+    <h4>Social Media</h4>
+    <img src="/imgs/instagram.png" alt="instagram symbol" />
+    <a href="https://www.instagram.com/amaise_comu/">@amaise_comu</a>
+    <img src="/imgs/tiktok.png" alt="tiktok symbol" />
+    <p>@amaise_comu</p>
+  </div>
+</footer>
+
+<style>
+  .footer-grid {
+    background: var(--text-dark);
+    color: var(--text-light);
+
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 4rem;
+
+    padding: 5rem 2rem;
+    text-align: center;
+  }
+
+  .footer-grid > div {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 0.5rem;
+  }
+
+  .footer-grid h4 {
+    margin: 0;
+    font-size: clamp(1.2rem, 3vw, 1.3rem);
+  }
+
+  .footer-grid p,
+  .footer-grid a {
+    margin: 0;
+    color: var(--text-light);
+    text-decoration: none;
+    font-family: var(--font-body);
+    font-size: clamp(1rem, 3vw, 2rem);
+    line-height: 1.2;
+  }
+
+  .ready h3 {
+    font-family: var(--font-heading);
+    text-transform: none;
+    font-weight: 500;
+    font-style: italic;
+    max-width: 20ch;
+    font-size: clamp(1.4rem, 3vw, 1.6rem);
+  }
+
+  .location p {
+    max-width: 20ch;
+  }
+
+  .footer-grid img {
+    width: clamp(10px, 6vw, 25px);
+  }
+
+  @media (min-width: 900px) {
+    .footer-grid {
+      grid-template-columns: repeat(4, 1fr);
+      align-items: start;
+
+      gap: 3rem;
+      padding: 4rem 3rem;
+    }
+
+    .ready {
+      align-self: center;
+    }
+
+    .footer-grid p,
+    .footer-grid a {
+      font-size: clamp(1rem, 1.6vw, 1.4rem);
+    }
+
+    .ready p {
+      font-size: clamp(1.6rem, 2vw, 2.2rem);
+    }
+  }
+</style>
