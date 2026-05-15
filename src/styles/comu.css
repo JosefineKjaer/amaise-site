@@ -9,13 +9,13 @@
 }
 
 body {
-  font-family: sans-serif;
+  font-family: "Inter", sans-serif;
 }
 
 /* HERO SECTION */
 
 .comu-hero {
-  height: 10vh;
+  height: 40vh;
   background-image: linear-gradient(rgba(0, 0, 0, 0.15), rgba(0, 0, 0, 0.15)), url("/imgs/comu-hero.JPG");
 
   background-size: cover;
@@ -36,7 +36,7 @@ body {
 .comu-hero p {
   margin-top: -1rem;
   color: var(--accent);
-  font-size: clamp(1rem, 2vw, 1.6rem);
+  font-size: clamp(1rem, 2vw, 2rem);
   font-style: italic;
   font-family: sans-serif;
   text-transform: uppercase;
@@ -45,10 +45,11 @@ body {
 
 /* INFO SECTIONS */
 .info-section {
-  max-width: 700px;
+  width: calc(100% - 2rem);
+  max-width: 900px;
   margin: 3rem auto;
   padding: 1rem 2rem 2rem;
-  border: 2px solid var(--text-dark);
+  border: 3px solid var(--text-dark);
   border-radius: 10rem;
   text-align: center;
 }
@@ -68,6 +69,7 @@ body {
   width: min(100%, 350px);
 }
 
+/* ARTIST SECTIONS */
 .button {
   display: inline-flex;
   align-items: center;
@@ -79,31 +81,46 @@ body {
   color: var(--text-light);
   border-radius: 999px;
 
-  font-family: sans-serif;
-  font-size: 1rem;
+  font-size: 0.9rem;
+  text-decoration: none;
 
   transition: 0.3s ease;
 }
 
+.button:hover {
+  padding: 1.1rem 2.1rem;
+  font-size: 1rem;
+}
+
 .artist-card {
-  margin-top: 2rem;
+  width: min(100%, 320px);
+  margin: 2rem auto;
 
   text-align: left;
 }
 
-.artist-card h3 {
-  text-transform: uppercase;
-  margin-bottom: 0.5rem;
+.artist-card p {
+  margin: 0.3rem 0 1rem;
+  text-align: left;
 }
 
-.artist-card p {
-  margin-bottom: 1.5rem;
+.artist-card h3 {
+  margin: 0;
+  text-align: left;
 }
 
 .artist-image {
-  width: min(100%, 280px);
-  margin: 0 auto 1rem;
+  width: 100%;
   border-radius: 2rem;
+  display: block;
+  margin-bottom: 0.5rem;
+}
+
+.artist-grid {
+  display: grid;
+  gap: 2rem;
+
+  margin-top: 2rem;
 }
 
 .image-grid {
@@ -114,12 +131,26 @@ body {
 
 .image-grid img {
   width: 100%;
+  height: 100%;
   border-radius: 2rem;
+  object-fit: cover;
+  display: block;
 }
 
 /* MEDIA QUERIES */
-@media (width > 450px) {
+@media (min-width: 768px) {
   .comu-hero {
     height: 60vh;
+  }
+
+  .artist-grid {
+    grid-template-columns: repeat(3, 1fr);
+    align-items: start;
+  }
+
+  .image-grid {
+    grid-template-columns: repeat(2, 1fr);
+    align-items: stretch;
+    gap: 3rem;
   }
 }
