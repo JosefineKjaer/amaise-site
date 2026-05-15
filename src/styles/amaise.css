@@ -11,8 +11,14 @@
 
 body {
   font-family: var(--font-body);
-  background: var(---bg);
+  background: var(--bg);
   color: var(--text-dark);
+}
+
+header {
+  background: var(--text-dark);
+  color: var(--text-light);
+  text-decoration: none;
 }
 
 h1 {
