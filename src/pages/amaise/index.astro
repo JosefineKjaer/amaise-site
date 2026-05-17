@@ -10,9 +10,15 @@ import AboutSection from "../../components/amaise/AboutSection.astro";
   <h2>Services</h2>
   <img class="wave" src="/imgs/wave.png" alt="wave vector" />
   <section class="service-grid">
-    <ServiceSection title="Curly cuts" text="Tailored cuts for curls and textured hair – all about shape, bounce, and definition." image="/imgs/cut.JPG" alt="Curly hair getting cut" />
-    <ServiceSection title="Colour" text="Custom colour that suits your vibe – soft, dimensional, and made to last." image="/imgs/color.JPG" alt="Colored curly hair getting styled" />
-    <ServiceSection title="Straight hair" text="Clean cuts and treatments for straight hair – simple, polished, and effortless." />
+    <ServiceSection href="/amaise/services?category=curls" title="Curly hair" text="Tailored cuts and colour for curls and textured hair — all about shape, bounce, and definition." image="/imgs/cut.JPG" alt="Curly hair getting cut" />
+    <ServiceSection
+      href="/amaise/services?category=straight"
+      title="Straight hair"
+      text="Tailored cuts and colour for straight hair — focused on movement, softness, and effortless styling."
+      image="/imgs/color.JPG"
+      alt="Colored curly hair getting styled"
+    />
+    <ServiceSection href="/amaise/services?category=brow-lash" title="Brow & lash colour" text="Tailored cuts for curls and textured hair – all about shape, bounce, and definition." image="/imgs/stock-img.png" alt="Image is on the way" />
   </section>
   <img class="wave2" src="/imgs/wave.png" alt="wave vector" />
   <AboutSection />
@@ -48,7 +54,7 @@ import AboutSection from "../../components/amaise/AboutSection.astro";
 
   @media (min-width: 900px) {
     .wave {
-      top: 30rem;
+      top: 28rem;
       z-index: -1;
     }
     .wave2 {

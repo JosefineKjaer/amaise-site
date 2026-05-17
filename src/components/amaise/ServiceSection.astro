@@ -1,7 +1,7 @@
 ---
-const { title, text, image, alt } = Astro.props;
+const { title, text, image, alt, href } = Astro.props;
 
-import ReadMore from "./ReadMore.astro";
+import ReadMore from "../amaise/ReadMore.astro";
 ---
 
 <section class="services">
@@ -9,7 +9,7 @@ import ReadMore from "./ReadMore.astro";
   <div class="service-content">
     <h4>{title}</h4>
     <p>{text}</p>
-    <ReadMore />
+    <ReadMore href={href} />
   </div>
 </section>
 

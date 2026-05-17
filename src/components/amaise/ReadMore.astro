@@ -1,4 +1,8 @@
-<a class="read-button" href="">Read more</a>
+---
+const { href } = Astro.props;
+---
+
+<a class="read-button" href={href}>Read more</a>
 
 <style>
   .read-button {
