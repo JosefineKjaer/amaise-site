@@ -1,0 +1,92 @@
+<section class="category-card">
+  <h3>Choosing the right category</h3>
+  <p>To give you the best experience, services are based on your hair’s length and thickness.</p>
+
+  <div class="category-extra">
+    <div class="thin">
+      <h4>Thin & short</h4>
+      <p>For hair that is both short and fine. Your hair should not be longer than the top of your shoulders, and it must be truly thin (most people fall into the “In Between” category).</p>
+    </div>
+
+    <div class="between">
+      <h4>In between</h4>
+      <p>For hair longer than your shoulders, but not longer than your chest, with a regular thickness. If your hair is very thick or takes a long time to dry, please choose “Long and/or thick” when booking.</p>
+    </div>
+
+    <div class="long">
+      <h4>Long and/or thick</h4>
+      <p>For hair longer than your chest, or hair that is very thick and more time-consuming to work with.</p>
+    </div>
+
+    <div class="info">
+      <p>If you’re booking both colour and a haircut, please book the colour service first and add the haircut after.</p>
+
+      <strong>If you’re unsure which category you fall into, feel free to reach out</strong>
+    </div>
+  </div>
+  <button class="card-toggle" type="button" aria-label="Open service card">
+    <span class="arrow">﹀</span>
+  </button>
+</section>
+
+<style>
+  .category-card {
+    background: var(--secondary);
+    color: var(--text-dark);
+    width: clamp(320px, 88vw, 700px);
+    margin: 2rem auto;
+    padding: 1.4rem;
+    text-align: center;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  .category-extra {
+    display: none;
+  }
+
+  .category-card.is-open .category-extra {
+    display: block;
+  }
+
+  .card-toggle {
+    border: 0;
+    background: none;
+    color: var(--text-dark);
+    font-size: 2.4rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .card-toggle span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .category-card.is-open .card-toggle span {
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: 900px) {
+    .category-card {
+      width: clamp(700px, 88vw, 1200px);
+      padding: 2rem;
+    }
+
+    .category-card.is-open .category-extra {
+      display: grid;
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 2rem;
+    }
+
+    .info {
+      grid-column: 1 / -1;
+      margin-top: 2rem;
+      max-width: 500px;
+      margin: auto;
+    }
+
+    /* .card-toggle {
+      display: none;
+    } */
+  }
+</style>

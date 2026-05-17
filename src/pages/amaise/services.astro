@@ -1,0 +1,50 @@
+---
+import AmaiseLayout from "../../layouts/AmaiseLayout.astro";
+import ServiceCard from "../../components/amaise/ServiceCard.astro";
+import CategoryCard from "../../components/amaise/CategoryCard.astro";
+---
+
+<AmaiseLayout>
+  <h1>Services</h1>
+  <CategoryCard />
+
+  <h2>Curly cuts</h2>
+  <ServiceCard
+    title="DRY CURLY CUT QUICK"
+    image="../imgs/cut.JPG"
+    alt="Curly hair getting cut"
+    text="This is a quick trim, for you who wants to keep the length. I will only cut your hair in the same shape, that you already have. And the haircut only includes 2-3 centimeters being cut off."
+    prices={[
+      { label: "Thin & Short", time: "30 min", price: "600 kr" },
+      {
+        label: "In between",
+        time: "40 min",
+        price: "600 kr",
+      },
+      {
+        label: "Long and/or thick",
+        time: "50 min",
+        price: "800 kr",
+      },
+    ]}
+    beforeText="Your hair must be washed and detangled all the way through the knots, on the day before or on the same day as your appointment. Apply the hair products you use at home, so I can see the full potential of your curls. Your hair has to be dry for the best outcome of your haircut. "
+  />
+</AmaiseLayout>
+
+<script>
+  document.querySelectorAll(".service-card").forEach((card) => {
+    const button = card.querySelector(".card-toggle");
+
+    button?.addEventListener("click", () => {
+      card.classList.toggle("is-open");
+    });
+  });
+
+  document.querySelectorAll(".category-card").forEach((card) => {
+    const button = card.querySelector(".card-toggle");
+
+    button?.addEventListener("click", () => {
+      card.classList.toggle("is-open");
+    });
+  });
+</script>

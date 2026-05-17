@@ -1,0 +1,153 @@
+---
+const { title, image, alt, text, prices, beforeText } = Astro.props;
+---
+
+<section class="service-card">
+  <div class="service-top">
+    <div>
+      <h3>{title}</h3>
+      <img src={image} alt={alt} />
+      <p>{text}</p>
+    </div>
+
+    <h4>Price & estimated time</h4>
+  </div>
+
+  <div class="service-extra">
+    <div>
+      {
+        prices.map((item) => (
+          <div class="price-row">
+            <strong>{item.label}</strong>
+            <span />
+            <p>
+              {item.time} / {item.price}
+            </p>
+          </div>
+        ))
+      }
+    </div>
+
+    <div>
+      <h4>Before the appointment</h4>
+      <p>{beforeText}</p>
+    </div>
+  </div>
+
+  <button class="card-toggle" type="button" aria-label="Open service card">
+    <span class="arrow">﹀</span>
+  </button>
+</section>
+
+<style>
+  .service-card {
+    background: var(--secondary);
+    color: var(--text-dark);
+    width: clamp(320px, 88vw, 700px);
+    margin: 2rem auto;
+    padding: 1.4rem;
+    text-align: center;
+    box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
+  }
+
+  .service-top h3 {
+    margin-bottom: 1rem;
+  }
+
+  .service-top img {
+    width: 80%;
+    display: block;
+    margin: 1.4rem auto;
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+  }
+
+  .service-top {
+    max-width: 500px;
+    margin: auto;
+  }
+
+  .service-extra {
+    display: none;
+    margin-top: 1.5rem;
+  }
+
+  .service-card.is-open .service-extra {
+    display: block;
+  }
+
+  .price-row {
+    display: grid;
+    grid-template-columns: auto 1fr auto;
+    gap: 0.7rem;
+    align-items: center;
+    margin-bottom: 0.7rem;
+  }
+
+  .price-row span {
+    height: 1px;
+    background: var(--text-dark);
+    opacity: 0.5;
+  }
+
+  .price-row p {
+    margin: 0;
+  }
+
+  .card-toggle {
+    border: 0;
+    background: none;
+    color: var(--text-dark);
+    font-size: 2.4rem;
+    line-height: 1;
+    cursor: pointer;
+  }
+
+  .card-toggle span {
+    display: inline-block;
+    transition: transform 0.3s ease;
+  }
+
+  .service-card.is-open .card-toggle span {
+    transform: rotate(180deg);
+  }
+
+  @media (min-width: 900px) {
+    .service-card {
+      position: relative;
+      width: min(88vw, 1300px);
+      padding: 3.5rem 24rem 3.5rem 4rem;
+      text-align: left;
+    }
+
+    .service-top h3,
+    .service-top h4,
+    .service-extra h4 {
+      text-align: left;
+    }
+
+    .service-top img {
+      position: absolute;
+      right: -3rem;
+      top: 0.2rem;
+
+      width: clamp(260px, 24vw, 360px);
+      height: clamp(360px, 32vw, 460px);
+      object-fit: cover;
+
+      box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .service-extra {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 4rem;
+      max-width: 850px;
+      margin-top: 2rem;
+    }
+
+    .card-toggle {
+      display: none;
+    }
+  }
+</style>
