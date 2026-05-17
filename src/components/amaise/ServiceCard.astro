@@ -1,13 +1,15 @@
 ---
 const { title, image, alt, text, prices, beforeText } = Astro.props;
+
+import BookButton from "./BookButton.astro";
 ---
 
 <section class="service-card">
   <div class="service-top">
     <div>
       <h3>{title}</h3>
-      <img src={image} alt={alt} />
-      <p>{text}</p>
+      {image && <img src={image} alt={alt} />}
+      <p set:html={text} />
     </div>
   </div>
 
@@ -16,21 +18,32 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
       <h4>Price & estimated time</h4>
       {
         prices.map((item) => (
-          <div class="price-row">
-            <strong>{item.label}</strong>
-            <span />
+          <div class={`price-row ${!item.label ? "single-price" : ""}`}>
+            {item.label && (
+              <>
+                <strong>{item.label}</strong>
+                <span />
+              </>
+            )}
+
             <p>
               {item.time} / {item.price}
             </p>
           </div>
         ))
       }
+      <div class="book">
+        <BookButton />
+      </div>
     </div>
-
-    <div>
-      <h4>Before the appointment</h4>
-      <p>{beforeText}</p>
-    </div>
+    {
+      beforeText && (
+        <div>
+          <h4>Before the appointment</h4>
+          <p set:html={beforeText} />
+        </div>
+      )
+    }
   </div>
 
   <button class="card-toggle" type="button" aria-label="Open service card">
@@ -62,7 +75,6 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
     object-fit: cover;
   }
 
-  .service-top,
   .service-extra {
     max-width: 400px;
     margin: auto;
@@ -95,6 +107,11 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
     margin: 0;
   }
 
+  .single-price {
+    display: flex;
+    justify-content: center;
+  }
+
   .card-toggle {
     border: 0;
     background: none;
@@ -124,7 +141,7 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
     }
 
     .service-top {
-      max-width: 520px;
+      max-width: 450px;
       margin: 0;
     }
 
@@ -169,6 +186,15 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
 
     .card-toggle {
       display: none;
+    }
+
+    .book {
+      padding-top: 20px;
+      text-align: center;
+    }
+
+    .single-price {
+      justify-content: left;
     }
   }
 </style>
