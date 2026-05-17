@@ -1,0 +1,28 @@
+<a class="read-button" href="">Read more</a>
+
+<style>
+  .read-button {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    font-weight: 500;
+    background: var(--accent);
+    font-size: clamp(0.8rem, 2vw, 1rem);
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 999px;
+    padding: 0.6rem 1rem;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .read-button:hover {
+    transform: scale(1.01);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+</style>
