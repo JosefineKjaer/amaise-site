@@ -9,12 +9,11 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
       <img src={image} alt={alt} />
       <p>{text}</p>
     </div>
-
-    <h4>Price & estimated time</h4>
   </div>
 
   <div class="service-extra">
     <div>
+      <h4>Price & estimated time</h4>
       {
         prices.map((item) => (
           <div class="price-row">
@@ -44,7 +43,8 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
     background: var(--secondary);
     color: var(--text-dark);
     width: clamp(320px, 88vw, 700px);
-    margin: 2rem auto;
+    margin: auto;
+    margin-bottom: 2rem;
     padding: 1.4rem;
     text-align: center;
     box-shadow: 0 10px 22px rgba(0, 0, 0, 0.16);
@@ -62,8 +62,9 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
     object-fit: cover;
   }
 
-  .service-top {
-    max-width: 500px;
+  .service-top,
+  .service-extra {
+    max-width: 400px;
     margin: auto;
   }
 
@@ -111,13 +112,20 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
   .service-card.is-open .card-toggle span {
     transform: rotate(180deg);
   }
-
-  @media (min-width: 900px) {
+  @media (min-width: 700px) {
     .service-card {
       position: relative;
       width: min(88vw, 1300px);
-      padding: 3.5rem 24rem 3.5rem 4rem;
+      min-height: 430px;
+
+      margin: 4rem auto;
+      padding: 3rem clamp(13rem, 22vw, 22rem) 3rem 4rem;
       text-align: left;
+    }
+
+    .service-top {
+      max-width: 520px;
+      margin: 0;
     }
 
     .service-top h3,
@@ -126,24 +134,37 @@ const { title, image, alt, text, prices, beforeText } = Astro.props;
       text-align: left;
     }
 
+    .service-top h3 {
+      margin: 0 0 1rem;
+    }
+
+    .service-top p {
+      margin: 0 0 2rem;
+    }
+
     .service-top img {
       position: absolute;
-      right: -3rem;
-      top: 0.2rem;
+      right: -2rem;
+      top: 2rem;
 
-      width: clamp(260px, 24vw, 360px);
-      height: clamp(360px, 32vw, 460px);
+      width: clamp(220px, 24vw, 360px);
+      height: clamp(300px, 30vw, 440px);
+
+      margin: 0;
       object-fit: cover;
-
       box-shadow: 0 10px 24px rgba(0, 0, 0, 0.18);
+    }
+
+    .service-top h4 {
+      margin: 0 0 1rem;
     }
 
     .service-extra {
       display: grid;
       grid-template-columns: 1fr 1fr;
       gap: 4rem;
-      max-width: 850px;
-      margin-top: 2rem;
+      margin: 2rem 0 0;
+      max-width: none;
     }
 
     .card-toggle {
