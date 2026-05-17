@@ -1,9 +1,14 @@
+---
+import ReadMore from "./ReadMore.astro";
+---
+
 <section class="about">
   <div class="about-card">
     <div class="about-info">
       <h2>About A'MAISE</h2>
       <p>A’MAISE is more than just a hair salon. It’s a warm and welcoming space focused on curls, texture, and making every client feel seen and understood.</p>
       <p>Maise is passionate about creating an experience where quality, comfort, and connection go hand in hand — so you can feel at home from the moment you walk through the door.</p>
+      <ReadMore />
     </div>
     <img src="/imgs/maise.JPG" alt="Photo of Maise, founder of A'MAISE" class="about-img" />
   </div>
@@ -16,6 +21,10 @@
 
   .about-card {
     position: relative;
+
+    max-width: 600px;
+
+    margin: 0 auto;
 
     background: var(--secondary);
 
@@ -78,12 +87,12 @@
 
       width: 320px;
 
-      right: -2rem;
-      top: -3rem;
+      right: 2rem;
+      top: -0.1rem;
     }
 
     .about-info {
-      padding-right: 4rem;
+      padding-right: 0;
     }
   }
 </style>

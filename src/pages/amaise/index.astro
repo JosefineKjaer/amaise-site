@@ -8,21 +8,56 @@ import AboutSection from "../../components/amaise/AboutSection.astro";
 
 <AmaiseLayout>
   <AmaiseHero />
-
+  <h2>Services</h2>
+  <img class="wave" src="/imgs/wave.png" alt="" />
   <section class="service-grid">
     <ServiceSection title="Curly cuts" text="Tailored cuts for curls and textured hair – all about shape, bounce, and definition." image="/imgs/cut.JPG" alt="Curly hair getting cut" />
     <ServiceSection title="Colour" text="Custom colour that suits your vibe – soft, dimensional, and made to last." image="/imgs/color.JPG" alt="Colored curly hair getting styled" />
     <ServiceSection title="Straight hair" text="Clean cuts and treatments for straight hair – simple, polished, and effortless." />
   </section>
-
+  <img class="wave2" src="/imgs/wave.png" alt="" />
   <AboutSection />
 </AmaiseLayout>
 
 <style>
+  .wave {
+    position: absolute;
+    width: 100vw;
+    top: 19rem;
+  }
+
+  .wave2 {
+    position: absolute;
+    width: 100vw;
+    top: 90rem;
+  }
+
   @media (min-width: 700px) {
     .service-grid {
       display: grid;
       grid-template-columns: repeat(3, 1fr);
+    }
+
+    .wave {
+      top: 26.5rem;
+    }
+
+    .wave2 {
+      top: 73rem;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .wave {
+      top: 30rem;
+      z-index: -1;
+    }
+    .wave2 {
+      top: 115rem;
+    }
+
+    h2 {
+      z-index: 20;
     }
   }
 </style>
