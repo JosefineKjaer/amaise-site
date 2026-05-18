@@ -1,7 +1,295 @@
 ---
 import AmaiseLayout from "../../layouts/AmaiseLayout.astro";
+const images = [
+  {
+    before: "/imgs/before1.png",
+    after: "/imgs/after1.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before2.png",
+    after: "/imgs/after2.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before3.png",
+    after: "/imgs/after3.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before4.png",
+    after: "/imgs/after4.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before5.png",
+    after: "/imgs/after5.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before6.png",
+    after: "/imgs/after6.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before7.png",
+    after: "/imgs/after7.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before8.png",
+    after: "/imgs/after8.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before9.png",
+    after: "/imgs/after9.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before11.png",
+    after: "/imgs/after11.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before12.png",
+    after: "/imgs/after12.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before13.png",
+    after: "/imgs/after13.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before14.png",
+    after: "/imgs/after14.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before15.png",
+    after: "/imgs/after15.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before16.png",
+    after: "/imgs/after16.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before17.png",
+    after: "/imgs/after17.png",
+    alt: "Curly hair transformation",
+  },
+  {
+    before: "/imgs/before18.png",
+    after: "/imgs/after18.png",
+    alt: "Curly hair transformation",
+  },
+];
 ---
 
 <AmaiseLayout>
-  <h1>Inspiration</h1>
+  <section class="inspiration">
+    <h1>Inspiration</h1>
+    <h4 class="hover-note">Hover to see before pictures</h4>
+    <img src="/imgs/arrow.png" alt="arrow" class="arrow" />
+    <div class="mobile-gallery">
+      <div class="inspo-col mobile-left">
+        {
+          [images[0], images[2], images[7], images[10]].map((image) => (
+            <article class="inspo-card">
+              <img class="after-img" src={image.after} alt={image.alt} />
+              <img class="before-img" src={image.before} alt={image.alt} />
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="inspo-col mobile-right">
+        {
+          [images[1], images[4], images[8], images[12]].map((image) => (
+            <article class="inspo-card">
+              <img class="after-img" src={image.after} alt={image.alt} />
+              <img class="before-img" src={image.before} alt={image.alt} />
+            </article>
+          ))
+        }
+      </div>
+    </div>
+
+    <div class="desktop-gallery">
+      <div class="inspo-col col-1">
+        {
+          [images[3], images[5], images[13]].map((image) => (
+            <article class="inspo-card">
+              <img class="after-img" src={image.after} alt={image.alt} />
+              <img class="before-img" src={image.before} alt={image.alt} />
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="inspo-col col-2">
+        {
+          [images[2], images[0], images[6], images[14]].map((image) => (
+            <article class="inspo-card">
+              <img class="after-img" src={image.after} alt={image.alt} />
+              <img class="before-img" src={image.before} alt={image.alt} />
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="inspo-col col-3">
+        {
+          [images[1], images[8], images[15]].map((image) => (
+            <article class="inspo-card">
+              <img class="after-img" src={image.after} alt={image.alt} />
+              <img class="before-img" src={image.before} alt={image.alt} />
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="inspo-col col-4">
+        {
+          [images[7], images[9], images[16]].map((image) => (
+            <article class="inspo-card">
+              <img class="after-img" src={image.after} alt={image.alt} />
+              <img class="before-img" src={image.before} alt={image.alt} />
+            </article>
+          ))
+        }
+      </div>
+
+      <div class="inspo-col col-5">
+        {
+          [images[10], images[11], images[12]].map((image) => (
+            <article class="inspo-card">
+              <img class="after-img" src={image.after} alt={image.alt} />
+              <img class="before-img" src={image.before} alt={image.alt} />
+            </article>
+          ))
+        }
+      </div>
+    </div>
+  </section>
 </AmaiseLayout>
+
+<style>
+  .inspiration {
+    padding: 2rem 1rem 4rem;
+  }
+
+  .hover-note,
+  .desktop-gallery,
+  .arrow {
+    display: none;
+  }
+
+  .mobile-gallery {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 0.9rem;
+    max-width: 420px;
+    margin: 0 auto;
+    align-items: end;
+  }
+
+  .inspo-col {
+    display: flex;
+    flex-direction: column;
+    gap: 0.9rem;
+    justify-content: flex-end;
+  }
+
+  .mobile-left {
+    padding-top: 8rem;
+  }
+
+  .inspo-card {
+    position: relative;
+    overflow: hidden;
+    border-radius: 0.8rem;
+  }
+
+  .inspo-card img {
+    width: 100%;
+    display: block;
+  }
+
+  .inspo-card .before-img {
+    display: none;
+  }
+
+  @media (min-width: 900px) {
+    .inspiration {
+      padding: 4rem 2rem 8rem;
+      position: relative;
+    }
+
+    .hover-note {
+      display: block;
+      text-align: center;
+      max-width: clamp(11rem, 17vw, 14rem);
+      margin-left: 4rem;
+      font-size: clamp(1.2rem, 2vw, 1.7rem);
+      font-style: italic;
+    }
+
+    .arrow {
+      display: block;
+      position: absolute;
+      width: clamp(10rem, 17vw, 20rem);
+      top: clamp(21rem, 8vw, 26rem);
+      left: clamp(4rem, 8vw, 9rem);
+      transform: translateX(-50%);
+    }
+
+    .mobile-gallery {
+      display: none;
+    }
+
+    .desktop-gallery {
+      display: grid;
+      grid-template-columns: repeat(5, 1fr);
+      gap: 1rem;
+      max-width: 1400px;
+      margin: 0 auto;
+      align-items: end;
+    }
+
+    .col-1 {
+      padding-top: 8rem;
+    }
+
+    .col-2 {
+      padding-top: 2rem;
+    }
+
+    .col-3 {
+      padding-top: 6rem;
+    }
+
+    .col-4 {
+      padding-top: 0;
+    }
+
+    .col-5 {
+      padding-top: 4rem;
+    }
+
+    .inspo-card .before-img {
+      display: block;
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+
+    .inspo-card:hover .before-img {
+      opacity: 1;
+    }
+  }
+</style>
