@@ -11,13 +11,7 @@ import AboutSection from "../../components/amaise/AboutSection.astro";
   <img class="wave" src="/imgs/wave.png" alt="wave vector" />
   <section class="service-grid">
     <ServiceSection href="/amaise/services?category=curls" title="Curly hair" text="Tailored cuts and colour for curls and textured hair — all about shape, bounce, and definition." image="/imgs/cut.JPG" alt="Curly hair getting cut" />
-    <ServiceSection
-      href="/amaise/services?category=straight"
-      title="Straight hair"
-      text="Tailored cuts and colour for straight hair — focused on movement, softness, and effortless styling."
-      image="/imgs/color.JPG"
-      alt="Colored curly hair getting styled"
-    />
+    <ServiceSection href="/amaise/services?category=straight" title="Straight hair" text="Tailored cuts and colour for straight hair — focused on movement, softness, and effortless styling." image="/imgs/stock-img.png" alt="Image is on the way" />
     <ServiceSection href="/amaise/services?category=brow-lash" title="Brow & lash colour" text="Tailored cuts for curls and textured hair – all about shape, bounce, and definition." image="/imgs/stock-img.png" alt="Image is on the way" />
   </section>
   <img class="wave2" src="/imgs/wave.png" alt="wave vector" />
@@ -35,6 +29,7 @@ import AboutSection from "../../components/amaise/AboutSection.astro";
     position: absolute;
     width: 100vw;
     top: 90rem;
+    transform: scaleX(-1);
   }
 
   @media (min-width: 700px) {
