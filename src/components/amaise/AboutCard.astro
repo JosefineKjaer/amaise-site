@@ -15,6 +15,7 @@
     <img src="/imgs/maise.JPG" alt="Photo of Maise, founder of A'MAISE" class="about-img" />
   </div>
 </section>
+<img class="wave" src="/imgs/wave.png" alt="wave vector" />
 <section class="about about-reverse">
   <div class="about-card">
     <div class="about-info">
@@ -31,6 +32,13 @@
 </section>
 
 <style>
+  .wave {
+    position: absolute;
+    width: 100vw;
+    top: 30rem;
+    z-index: -1;
+  }
+
   .comu-button {
     text-decoration: none;
     color: var(--text-dark);
@@ -126,6 +134,10 @@
   }
 
   @media (min-width: 900px) {
+    .wave {
+      top: 45rem;
+    }
+
     /***** ABOUT *****/
     .about {
       padding: 2rem 2rem;
