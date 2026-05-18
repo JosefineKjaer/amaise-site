@@ -5,7 +5,7 @@ import CategoryCard from "../../components/amaise/CategoryCard.astro";
 ---
 
 <AmaiseLayout>
-  <h1>Services</h1>
+  <h1 class="service-h1">Services</h1>
 
   <CategoryCard />
 
@@ -369,6 +369,9 @@ Methods to be used:
 </AmaiseLayout>
 
 <style>
+  .service-h1 {
+    padding-top: 3.2rem;
+  }
   .service-filters {
     display: flex;
     justify-content: center;
