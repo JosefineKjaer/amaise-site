@@ -1,0 +1,178 @@
+<section class="about">
+  <div class="about-card">
+    <div class="about-info">
+      <p>My name is Maise and i'm the stylist behind A'MAISE and part of the COMU community.</p>
+      <p>
+        My passion for hair started during my hairdressing education, where I quickly realized that working with curls and textured hair was what truly inspired me. I felt like there was a lack of spaces where there was time to really understand both
+        the hair and the person behind it — not just focus on speed and standard treatments. That’s why I created A’MAISE.
+      </p>
+      <p class="hidden">
+        At A’MAISE, it’s not just about hair. It’s about feeling safe, welcomed, and understood. Many of my clients come from previous salon experiences where they didn’t feel heard or where their hair type wasn’t properly understood. Creating a
+        space built around trust, good energy, and genuine connection is therefore one of the most important parts of what I do.
+      </p>
+    </div>
+    <img src="/imgs/maise.JPG" alt="Photo of Maise, founder of A'MAISE" class="about-img" />
+  </div>
+</section>
+<section class="about about-reverse">
+  <div class="about-card">
+    <div class="about-info">
+      <p>I mainly specialize in wavy and curly hair, but above all, I want every client to feel comfortable and cared for while sitting in my chair. The experience should feel just as good as the final result looks.</p>
+      <p>
+        Alongside A’MAISE, I also created COMU — a shared space and community for independent stylists with a passion for textured hair, creativity, and connection. The vision behind COMU is to create an inspiring environment where both clients and
+        stylists can feel at home.
+      </p>
+      <p>Want to explore the other stylists in COMU?</p>
+      <a class="comu-button" href="/" target="_blank">Go to comu</a>
+    </div>
+    <img src="/imgs/maise.JPG" alt="Photo of Maise, founder of A'MAISE" class="about-img" />
+  </div>
+</section>
+
+<style>
+  .comu-button {
+    text-decoration: none;
+    color: var(--text-dark);
+    font-family: var(--font-body);
+    font-weight: 600;
+    background: var(--accent);
+    font-size: clamp(1rem, 2vw, 1.1rem);
+    text-transform: uppercase;
+
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    margin-top: 0.5rem;
+    border-radius: 999px;
+    padding: 0.6rem 1.6rem;
+
+    cursor: pointer;
+
+    transition: transform 0.2s ease;
+  }
+
+  .comu-button:hover {
+    transform: scale(1.03);
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
+  }
+
+  /***** ABOUT *****/
+  .about {
+    padding: 1rem;
+  }
+
+  .hidden {
+    display: none;
+  }
+
+  .about-card {
+    position: relative;
+
+    max-width: 600px;
+
+    margin: 0 auto;
+
+    background: var(--secondary);
+
+    padding: 1.5rem;
+    /* overflow: visible; */
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.08);
+  }
+
+  .about-info {
+    padding-right: 8rem;
+  }
+
+  .about-info h2 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+  }
+
+  .about-info p {
+    margin-bottom: 1rem;
+    line-height: 1.5;
+  }
+
+  .about-img {
+    width: 160px;
+
+    aspect-ratio: 3 / 4;
+    object-fit: cover;
+
+    position: absolute;
+
+    top: 0.1rem;
+    right: -0.1rem;
+
+    transform: rotate(-3deg);
+
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.15);
+  }
+
+  /***** ABOUT REVERSE *****/
+  .about-reverse .about-img {
+    right: auto;
+    left: -0.1rem;
+
+    transform: rotate(3deg);
+  }
+
+  .about-reverse .about-info {
+    padding-right: 0;
+    padding-left: 9.5rem;
+  }
+
+  @media (min-width: 900px) {
+    /***** ABOUT *****/
+    .about {
+      padding: 3rem 2rem;
+    }
+
+    .hidden {
+      display: block;
+    }
+
+    .about-card {
+      max-width: 1100px;
+      margin: 0 auto;
+      padding: 4rem;
+
+      display: grid;
+      grid-template-columns: 1fr 350px;
+
+      gap: 3rem;
+
+      align-items: center;
+    }
+
+    .about-img {
+      /* position: absolute; */
+
+      width: 400px;
+
+      right: 2rem;
+      top: -0.1rem;
+    }
+
+    .about-info {
+      padding-right: 0;
+    }
+
+    /***** ABOUT REVERSE *****/
+    .about-reverse .about-card {
+      grid-template-columns: 350px 1fr;
+      margin-bottom: 7rem;
+    }
+
+    .about-reverse .about-img {
+      left: 2rem;
+    }
+
+    .about-reverse .about-info {
+      padding-left: 0;
+      grid-column: 2;
+    }
+  }
+</style>
