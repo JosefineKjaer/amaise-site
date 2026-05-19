@@ -21,7 +21,7 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
     <div class="artist-grid">
       <ArtistSection image="/imgs/portrait-placeholder.png" alt="image of Maise from A'MAISE" title="A'MAISE" text="Specializing in cuts and colour, tailored to enhance your natural texture." href="/amaise" />
 
-      <ArtistSection image="/imgs/portrait-placeholder.png" alt="image of Michelle from Braidedbykiros" title="Braided by Kiros" text="Creative braiding in a range of styles – from classic looks to more detailed designs." />
+      <ArtistSection image="/imgs/michelle.JPG" alt="image of Michelle from Braidedbykiros" title="Braided by Kiros" text="Creative braiding in a range of styles – from classic looks to more detailed designs." />
 
       <ArtistSection image="/imgs/portrait-placeholder.png" alt="image of Justloccit" title="Justloccit" text="Denmark’s #1 Loctician, offering everything from starter locs to maintenance, repairs, and custom loc services." />
     </div>
@@ -38,7 +38,7 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
   </InfoSection>
   <img class="symbol7" src="/imgs/curl.png" alt="curl vector drawing" />
 
-  <InfoSection title="More from COMU" image="/imgs/insta-comu.png" alt="instagram logo @comucph" />
+  <InfoSection title="More from COMU" image="/imgs/insta-comu.png" alt="instagram logo @comucph" href="https://www.instagram.com/comucph/" />
 </ComuLayout>
 
 <style>
@@ -69,6 +69,9 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
     display: grid;
     gap: 2rem;
     margin-top: 2rem;
+    justify-content: center;
+    width: 100%;
+    place-items: center;
   }
 
   @media (min-width: 900px) {
@@ -80,15 +83,17 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
       gap: 3rem;
     }
 
-    .artist-grid {
-      grid-template-columns: repeat(3, 1fr);
-      align-items: start;
-      max-width: 960px;
-      margin-inline: auto;
-    }
-
     .image-grid img {
       max-width: 350px;
+    }
+
+    .artist-grid {
+      grid-template-columns: repeat(3, minmax(0, 1fr));
+      gap: 2rem;
+      justify-items: stretch;
+      align-items: stretch;
+      max-width: 1050px;
+      margin-inline: auto;
     }
 
     .symbol1,
@@ -132,7 +137,7 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
 
     .symbol5 {
       top: 177%;
-      left: 4%;
+      left: 2%;
       width: 175px;
       transform: rotate(2deg);
     }
