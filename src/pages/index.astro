@@ -7,10 +7,15 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
 
 <ComuLayout>
   <ComuHero />
+  <img class="symbol1" src="/imgs/blowdryer.png" alt="hair dryer vector drawing" />
   <InfoSection
     title="What is COMU?"
     text="COMU is a community of hairstylists who specialize in curly and textured hair. Different skills, one shared passion – understanding, enhancing, and celebrating natural texture. It’s a space built on knowledge, creativity, and a love for curls."
   />
+  <img class="symbol2" src="/imgs/comb.png" alt="comb vector drawing" />
+
+  <img class="symbol3" src="/imgs/scissors.png" alt="scissor vector drawing" />
+  <img class="symbol4" src="/imgs/curl.png" alt="curl vector drawing" />
 
   <InfoSection title="Who's in COMU?" text="COMU currently consists of four hairstylists – each with their own specialty, but all sharing a passion for curly and textured hair. For bookings, visit each stylist’s individual page.">
     <div class="artist-grid">
@@ -21,7 +26,8 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
       <ArtistSection image="/imgs/portrait-placeholder.png" alt="image of Justloccit" title="Justloccit" text="Denmark’s #1 Loctician, offering everything from starter locs to maintenance, repairs, and custom loc services." />
     </div>
   </InfoSection>
-
+  <img class="symbol5" src="/imgs/blowdryer.png" alt="hair dryer vector drawing" />
+  <img class="symbol6" src="/imgs/comb.png" alt="comb vector drawing" />
   <InfoSection title="Where is COMU?" text="COMU is located at Nørrebrogade 213, st tv, 2200 Copenhagen.Just a 4-minute walk from Nørrebro Station, with easy access to bus, metro, and S-trains.">
     <div class="image-grid">
       <a href="https://maps.app.goo.gl/LZKjXxpTkXaWFuY67">
@@ -30,11 +36,21 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
       <img src="/imgs/comu-outside.png" alt="COMU from the outside" />
     </div>
   </InfoSection>
+  <img class="symbol7" src="/imgs/curl.png" alt="curl vector drawing" />
 
   <InfoSection title="More from COMU" image="/imgs/insta-comu.png" alt="instagram logo @comucph" />
 </ComuLayout>
 
 <style>
+  .symbol1,
+  .symbol2,
+  .symbol3,
+  .symbol4,
+  .symbol5,
+  .symbol6,
+  .symbol7 {
+    display: none;
+  }
   .image-grid {
     display: grid;
     gap: 1rem;
@@ -49,17 +65,88 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
     display: block;
   }
 
+  .artist-grid {
+    display: grid;
+    gap: 2rem;
+    margin-top: 2rem;
+  }
+
   @media (min-width: 900px) {
     .image-grid {
       grid-template-columns: repeat(2, 1fr);
       align-items: center;
-      max-width: 620px;
+      max-width: 750px;
       margin-inline: auto;
       gap: 3rem;
     }
 
+    .artist-grid {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+      max-width: 960px;
+      margin-inline: auto;
+    }
+
     .image-grid img {
-      max-width: 300px;
+      max-width: 350px;
+    }
+
+    .symbol1,
+    .symbol2,
+    .symbol3,
+    .symbol4,
+    .symbol5,
+    .symbol6,
+    .symbol7 {
+      display: block;
+      position: absolute;
+      z-index: 10;
+    }
+    .symbol1 {
+      top: 46%;
+      left: 7%;
+      width: 175px;
+      transform: rotate(15deg);
+    }
+
+    .symbol2 {
+      top: 70%;
+      left: 85%;
+      width: 175px;
+      transform: rotate(-6deg);
+    }
+
+    .symbol3 {
+      top: 100%;
+      left: 4%;
+      width: 170px;
+      transform: rotate(-15deg);
+    }
+
+    .symbol4 {
+      top: 133%;
+      left: 90%;
+      width: 170px;
+      transform: rotate(-15deg);
+    }
+
+    .symbol5 {
+      top: 177%;
+      left: 4%;
+      width: 175px;
+      transform: rotate(2deg);
+    }
+    .symbol6 {
+      top: 214%;
+      left: 85%;
+      width: 170px;
+      transform: rotate(-5deg);
+    }
+    .symbol7 {
+      top: 234%;
+      left: 2%;
+      width: 170px;
+      transform: rotate(-60deg);
     }
   }
 </style>
