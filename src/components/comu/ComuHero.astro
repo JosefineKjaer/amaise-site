@@ -33,4 +33,27 @@
     text-transform: uppercase;
     letter-spacing: 0.03em;
   }
+
+  @media (min-width: 768px) {
+    .comu-hero {
+      height: 60vh;
+    }
+
+    .artist-grid {
+      grid-template-columns: repeat(3, 1fr);
+      align-items: start;
+    }
+
+    .image-grid {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: stretch;
+      gap: 3rem;
+    }
+  }
+
+  @media (min-width: 900px) {
+    .comu-hero {
+      height: 50vh;
+    }
+  }
 </style>

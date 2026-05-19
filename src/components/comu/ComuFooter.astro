@@ -1,0 +1,169 @@
+<footer class="footer-grid">
+  <div class="ready">
+    <h3>Ready to take care of your hair?</h3>
+    <p>Remember, to book you have to contact the individual hairdresser</p>
+  </div>
+
+  <div class="stylist">
+    <div>
+      <h3>A'MAISE</h3>
+      <a href="/amaise" class="button">View stylist</a>
+    </div>
+    <div>
+      <h3>Braided by Kiros</h3>
+      <a href="" class="button">View stylist</a>
+    </div>
+    <div>
+      <h3>Justloccit</h3>
+      <a href="" class="button">View stylist</a>
+    </div>
+  </div>
+
+  <div class="location">
+    <h3>Location</h3>
+    <a href="https://maps.app.goo.gl/rYP9NMgN86DbfY5p9" target="_blank">
+      <img src="/imgs/location.png" alt="location symbol" />
+      <p>Nørrebrogade 213 st tv, København 2200</p>
+    </a>
+  </div>
+</footer>
+
+<style>
+  .footer-grid {
+    display: grid;
+    gap: 3rem;
+
+    padding: 3rem 2rem;
+
+    background-color: var(--text-dark);
+    color: var(--text-light);
+  }
+
+  .footer-grid h3 {
+    font-size: clamp(1rem, 1.4vw, 1.25rem);
+  }
+
+  .footer-grid p {
+    font-size: clamp(0.95rem, 1.1vw, 1.1rem);
+  }
+
+  /***** READY *****/
+
+  .ready {
+    text-align: center;
+    max-width: 400px;
+    margin: 0 auto;
+  }
+
+  .ready h3 {
+    text-align: center;
+    margin-bottom: 1rem;
+  }
+
+  /***** STYLISTS *****/
+
+  .stylist {
+    display: grid;
+    gap: 1rem;
+    margin: 0 auto;
+  }
+
+  .stylist > div {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    gap: 1rem;
+  }
+
+  .stylist h3 {
+    margin: 0;
+  }
+
+  /***** BUTTON *****/
+
+  .button {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+
+    padding: 0.7rem 1.5rem;
+
+    background-color: var(--accent);
+    color: var(--text-dark);
+
+    min-width: clamp(8rem, 14vw, 11rem);
+    white-space: nowrap;
+    border-radius: 999px;
+
+    font-size: 0.9rem;
+    font-weight: 600;
+
+    text-decoration: none;
+
+    transition:
+      transform 0.2s ease,
+      box-shadow 0.2s ease;
+  }
+
+  .button:hover {
+    transform: scale(1.04);
+
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
+  }
+
+  /***** LOCATION *****/
+
+  .location {
+    max-width: 200px;
+    margin: 0 auto;
+    text-align: center;
+  }
+
+  .location a {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 1rem;
+
+    color: var(--text-light);
+    text-decoration: none;
+  }
+
+  .location img {
+    width: 28px;
+    flex-shrink: 0;
+  }
+
+  .location p {
+    margin: 0;
+  }
+
+  /***** DESKTOP *****/
+
+  @media (min-width: 900px) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr 1fr;
+
+      align-items: start;
+
+      padding: 4rem;
+
+      gap: 4rem;
+    }
+
+    .ready {
+      text-align: center;
+      margin: 0;
+    }
+
+    .ready h3 {
+      text-align: center;
+    }
+
+    .location {
+      margin-left: auto;
+      max-width: 250px;
+    }
+  }
+</style>

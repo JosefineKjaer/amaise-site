@@ -24,10 +24,42 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
 
   <InfoSection title="Where is COMU?" text="COMU is located at Nørrebrogade 213, st tv, 2200 Copenhagen.Just a 4-minute walk from Nørrebro Station, with easy access to bus, metro, and S-trains.">
     <div class="image-grid">
-      <img src="/imgs/kort.png" alt="Map showing COMU location" />
+      <a href="https://maps.app.goo.gl/LZKjXxpTkXaWFuY67">
+        <img src="/imgs/kort.png" alt="Map showing COMU location" />
+      </a>
       <img src="/imgs/comu-outside.png" alt="COMU from the outside" />
     </div>
   </InfoSection>
 
-  <InfoSection title="More from COMU" image="/imgs/" alt="instagram logo @comucph" />
+  <InfoSection title="More from COMU" image="/imgs/insta-comu.png" alt="instagram logo @comucph" />
 </ComuLayout>
+
+<style>
+  .image-grid {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+
+  .image-grid img {
+    width: 100%;
+    max-width: 280px;
+    margin: 0 auto;
+    border-radius: 2rem;
+    display: block;
+  }
+
+  @media (min-width: 900px) {
+    .image-grid {
+      grid-template-columns: repeat(2, 1fr);
+      align-items: center;
+      max-width: 620px;
+      margin-inline: auto;
+      gap: 3rem;
+    }
+
+    .image-grid img {
+      max-width: 300px;
+    }
+  }
+</style>
