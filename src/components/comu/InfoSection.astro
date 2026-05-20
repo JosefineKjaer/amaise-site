@@ -7,7 +7,7 @@ const { title, text, image, alt, href, noBorder = false } = Astro.props;
   {text && <p>{text}</p>}
 
   <a href={href} target="_blank">
-    {image && <img src={image} alt={alt} class="info-image" />}
+    {image && <img src={image} alt={alt} class="info-image" loading="lazy" />}
   </a>
 
   <slot />

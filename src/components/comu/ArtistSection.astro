@@ -3,7 +3,7 @@ const { title, text, image, alt, href } = Astro.props;
 ---
 
 <article class="artist-card">
-  {image && <img src={image} alt={alt} class="artist-image" />}
+  {image && <img src={image} alt={alt} class="artist-image" loading="lazy" />}
 
   <h3>{title}</h3>
   <p>{text}</p>
