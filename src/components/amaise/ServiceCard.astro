@@ -8,7 +8,7 @@ import BookButton from "./BookButton.astro";
   <div class="service-top">
     <div>
       <h3>{title}</h3>
-      {image && <img src={image} alt={alt} />}
+      {image && <img src={image} alt={alt} loading="lazy" />}
       <p set:html={text} />
     </div>
   </div>
