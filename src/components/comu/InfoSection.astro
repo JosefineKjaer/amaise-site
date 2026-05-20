@@ -1,8 +1,8 @@
 ---
-const { title, text, image, alt, href } = Astro.props;
+const { title, text, image, alt, href, noBorder = false } = Astro.props;
 ---
 
-<section class="info-section">
+<section class={`info-section ${noBorder ? "no-border" : ""}`}>
   <h2>{title}</h2>
   {text && <p>{text}</p>}
 
@@ -24,10 +24,14 @@ const { title, text, image, alt, href } = Astro.props;
     text-align: center;
   }
 
+  .info-section.no-border {
+    border: none;
+  }
+
   .info-image {
     margin: 2rem auto 0;
     border-radius: 2rem;
-    width: min(100%, 280px);
+    width: min(100%, 100px);
   }
 
   @media (min-width: 900px) {
@@ -37,7 +41,7 @@ const { title, text, image, alt, href } = Astro.props;
     }
 
     .info-image {
-      width: min(100%, 340px);
+      width: min(100%, 150px);
     }
   }
 </style>

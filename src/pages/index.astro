@@ -36,9 +36,9 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
       <img src="/imgs/comu-outside.png" alt="COMU from the outside" />
     </div>
   </InfoSection>
-  <img class="symbol7" src="/imgs/curl.png" alt="curl vector drawing" />
+  <!-- <img class="symbol7" src="/imgs/curl.png" alt="curl vector drawing" /> -->
 
-  <InfoSection title="More from COMU" image="/imgs/insta-comu.png" alt="instagram logo @comucph" href="https://www.instagram.com/comucph/" />
+  <InfoSection noBorder={true} title="More from COMU" image="/imgs/insta-comu.png" alt="instagram logo @comucph" href="https://www.instagram.com/comucph/" />
 </ComuLayout>
 
 <style>
@@ -51,6 +51,7 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
   .symbol7 {
     display: none;
   }
+
   .image-grid {
     display: grid;
     gap: 1rem;
@@ -72,6 +73,10 @@ import ArtistSection from "../components/comu/ArtistSection.astro";
     justify-content: center;
     width: 100%;
     place-items: center;
+  }
+
+  .more {
+    border: none;
   }
 
   @media (min-width: 900px) {
