@@ -1,8 +1,8 @@
 ---
-const { href } = Astro.props;
+const { href, label = "Read more" } = Astro.props;
 ---
 
-<a class="read-button" href={href}>Read more</a>
+<a class="read-button" href={href} aria-label={label}>Read more</a>
 
 <style>
   .read-button {
