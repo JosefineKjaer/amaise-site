@@ -10,24 +10,24 @@ import BookButton from "./BookButton.astro";
 
   <div class="location">
     <h4>Location</h4>
-    <img src="/imgs/location.png" alt="location symbol" />
-    <p>Nørrebrogade 213 st tv, København 2200</p>
+    <a href="https://maps.app.goo.gl/E7KhDX6AV7n9qFzr9" target="_blank">Nørrebrogade 213 st tv, København 2200</a>
   </div>
 
   <div class="contact">
     <h4>Contact</h4>
-    <img src="/imgs/dm.png" alt="instagram DM symbol" />
-    <a href="https://www.instagram.com/amaise_comu/">@amaise_comu</a>
-    <img src="/imgs/mail.png" alt="mail symbol" />
-    <a href="mailto:amaise.ceo@gmail.com">amaise.ceo@gmail.com</a>
+    <div>
+      <a href="https://www.instagram.com/amaise_comu/" target="_blank"> <img src="/imgs/dm.png" alt="instagram DM symbol" /></a>
+
+      <a href="mailto:amaise.ceo@gmail.com" target="_blank"><img src="/imgs/mail.png" alt="mail symbol" /></a>
+    </div>
   </div>
 
   <div class="some">
     <h4>Social Media</h4>
-    <img src="/imgs/instagram.png" alt="instagram symbol" />
-    <a href="https://www.instagram.com/amaise_comu/">@amaise_comu</a>
-    <img src="/imgs/tiktok.png" alt="tiktok symbol" />
-    <p>@amaise_comu</p>
+    <div>
+      <a href="https://www.instagram.com/amaise_comu/" target="_blank"><img src="/imgs/instagram.png" alt="instagram symbol" /></a>
+      <a href="https://www.tiktok.com" target="_blank"><img src="/imgs/tiktok.png" alt="tiktok symbol" /></a>
+    </div>
   </div>
 </footer>
 
@@ -37,10 +37,12 @@ import BookButton from "./BookButton.astro";
     color: var(--text-light);
 
     display: grid;
-    grid-template-columns: 1fr;
-    gap: 4rem;
+    grid-template-columns: 1fr 1fr 1fr;
 
-    padding: 5rem 2rem;
+    gap: 2.5rem 1.5rem;
+
+    padding: 3rem 1.5rem;
+
     text-align: center;
   }
 
@@ -48,60 +50,90 @@ import BookButton from "./BookButton.astro";
     display: flex;
     flex-direction: column;
     align-items: center;
+
     gap: 0.5rem;
   }
 
   .footer-grid h4 {
     margin: 0;
+
+    font-size: clamp(0.95rem, 2vw, 1.2rem);
   }
 
   .footer-grid p,
   .footer-grid a {
     margin: 0;
+
     color: var(--text-light);
     text-decoration: none;
+
     font-family: var(--font-body);
-    font-size: clamp(1rem, 3vw, 2rem);
+
+    font-size: clamp(0.85rem, 2vw, 1rem);
+
     line-height: 1.2;
+  }
+
+  .ready {
+    grid-column: 1 / -1;
   }
 
   .ready h3 {
     font-family: var(--font-heading);
+
     text-transform: none;
     font-weight: 500;
     font-style: italic;
-    max-width: 20ch;
-    font-size: clamp(1.4rem, 3vw, 1.6rem);
+
+    max-width: 16ch;
+
+    font-size: clamp(1.2rem, 4vw, 1.5rem);
+
+    margin-bottom: 0.7rem;
   }
 
-  .location p {
-    max-width: 20ch;
+  .location a {
+    max-width: 18ch;
   }
 
   .footer-grid img {
-    width: clamp(10px, 6vw, 25px);
+    width: clamp(18px, 5vw, 24px);
   }
+
+  .some div,
+  .contact div {
+    display: flex;
+    flex-direction: row;
+    gap: 1rem;
+
+    padding-top: 0.5rem;
+  }
+
+  /***** DESKTOP *****/
 
   @media (min-width: 900px) {
     .footer-grid {
       grid-template-columns: repeat(4, 1fr);
-      align-items: start;
+
+      align-items: center;
 
       gap: 3rem;
-      padding: 4rem 3rem;
+
+      padding: 3rem;
     }
 
     .ready {
+      grid-column: auto;
       align-self: center;
     }
 
     .footer-grid p,
     .footer-grid a {
-      font-size: clamp(1rem, 1.6vw, 1.4rem);
+      font-size: clamp(0.95rem, 1.1vw, 1.1rem);
     }
 
-    .ready p {
-      font-size: clamp(1.6rem, 2vw, 2.2rem);
+    .ready h3 {
+      font-size: clamp(1.4rem, 2vw, 1.8rem);
     }
   }
 </style>
