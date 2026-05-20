@@ -22,7 +22,7 @@ import AboutSection from "../../components/amaise/AboutSection.astro";
   .wave {
     position: absolute;
     width: 100vw;
-    top: 19rem;
+    top: 18rem;
   }
 
   .wave2 {
@@ -32,6 +32,22 @@ import AboutSection from "../../components/amaise/AboutSection.astro";
     transform: scaleX(-1);
   }
 
+  @media (min-width: 500px) {
+    .wave {
+      top: 17rem;
+    }
+
+    .wave2 {
+      top: 80rem;
+    }
+  }
+
+  @media (min-width: 650px) {
+    .wave {
+      top: 25rem;
+    }
+  }
+
   @media (min-width: 700px) {
     .service-grid {
       display: grid;
@@ -39,21 +55,21 @@ import AboutSection from "../../components/amaise/AboutSection.astro";
     }
 
     .wave {
-      top: 26.5rem;
+      top: 24rem;
     }
 
     .wave2 {
-      top: 73rem;
+      top: 67rem;
     }
   }
 
   @media (min-width: 900px) {
     .wave {
-      top: 28rem;
+      top: 29rem;
       z-index: -1;
     }
     .wave2 {
-      top: 115rem;
+      top: 100rem;
     }
 
     h2 {
