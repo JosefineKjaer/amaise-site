@@ -475,7 +475,7 @@ Methods to be used:
   const filterButtons = document.querySelectorAll(".filter-btn");
   const serviceItems = document.querySelectorAll(".service-item");
 
-  function showCategory(category) {
+  function showCategory(category: string) {
     serviceItems.forEach((item) => {
       item.classList.toggle("is-visible", item.dataset.category === category);
     });
